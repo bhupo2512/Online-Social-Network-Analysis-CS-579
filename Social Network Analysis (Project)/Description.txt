@@ -1,0 +1,34 @@
+Purpose of Project:
+
+The goal of this project is to create a Clustering and Classification Model, using methodologies learnt in classroom. The Idea is to analyse the social network and trends and come-up with the model that acheive the purpose of assignment.
+
+The Entire assignemnt is divided into 4 parts, as follows:
+
+Initaially for knowledge, The social network is analysed by collecting the tweets based on a keywork which is Most trending. I have collected tweets on "Demonetisation", which is the most trending topic on social media, as recently prime minister of India have asked bank to ceased all 500 and 100 Rupee Currency Notes, in order to fight agaisnt corruption and black money.
+The tweeter API is used to collect tweets on search keyword.
+
+
+collect.py:
+
+The key purpose of this file is to collect data using Twitter's REST API to search tweets, I have collected 300 tweets on keyword by filtering out the re-tweets in order to have a unique tweets. The 300 tweets have been collected over a period of 3 days resulting in 100 tweets per day, starting tweets from today till tweets three days before. Once the tweets have been collected its stored in one tweets.pkl file. Now after that the tweets information is used to find the friends list of each of the screen_name of user, there by collecting friends of all 300 tweets user's friends and stored in data.pkl. Apart from that in order to perform classification based on sentiment of tweets, I have used Afinn data which provides the prelabled words as negative and positive polarity. Its fetched and stored in respective files for negative and positive.
+
+cluster.py:
+
+The key purpose is to find and compute the communities based on smililariy of users. In order to perform clustering, I have read the tweets and each tweet user's friends which we have collected during collect phase. In order to find communities first have created a graph nodes with all user's, now to add an edge between nodes, I have followed the jaccard similarity concept such that two user will have an edge between them if they have a common friends with jacard simlilarity coef value greater than 0.005. Now that graph is created, we need graph to be more densed and properly fit for clustering so I have kept only those nodes which has a degree greater than 1 and removed rest. Now to perform clustering I have used the grivan newman algorithm taught in class, by finding the connected components based on maximum centrality. Once the cluster component is created its written into communities.pkl file.
+
+classify.py:
+
+The key purpose of classification is to classify tweets based on positive and negative sentiments using machine learning. Here I have created a classification model which is trained using the labeld data fetched from http://cs.stanford.edu/people/alecmgo/trainingandtestdata.zip location. the Model is trained using token pair features which takes a combination of pairs of closest word in the context, also model is trained using lexicon features based on negative and positive words collected via Afinn. Once the model is trained the collected tweets of 300 users is used as a test data to perdict the sentiment, the analysis takes time to compute as training a model on large train data to have an efficient output of classification. After the prediction on tweets as a test data the necessary information is written in the classification.pkl file to be used in the next stage of assignment.
+
+summarize.py
+
+The key pupose of summarize is to give a summary of important factors in assignment, it simply creates a file with necessary information by reading all different files we have stored in above stages of assignment.
+
+
+Instructions to execute the assignment:
+
+Place the data folder in to the same location as all .py files, place all .pkl files at same location as .py files.
+Then excute each .py files in order to have a correct output.
+
+
+

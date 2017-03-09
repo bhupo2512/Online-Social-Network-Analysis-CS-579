@@ -1,0 +1,1 @@
+amazon s3 plugin not worked in my website . it need PHP 5 . but my hosting provider has only PHP 4.4  . very sad.
