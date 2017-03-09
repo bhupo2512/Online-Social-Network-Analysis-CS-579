@@ -1,0 +1,104 @@
+﻿Enter your responses inline below and push this file to your private GitHub
+repository.
+
+
+1. Assume I plan to use the friend_overlap function above to quantify the
+similarity of two users. E.g., because 344 is larger than 1, I conclude that
+Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
+Trump.
+
+How is this approach misleading? How might you fix it?
+
+Jill Stein and Gary Johnson are more prominent than third-party candidates usually are, Jill Stein and Gary Johnson uses computational methods to attract the voters by calling the reader to engage in some type of action, providing information in a neutral manner, or advocating for or attacking a candidate.
+
+Clinton and Trump may be less concerned with encouraging traditional engagement like volunteering or voting because They have in a place a strong field organization through supports from key states. 
+
+The reason I think that Jill Stein and Gary Johnson have more friends in common because they are trying to attract more voters through strategy messagging or by inormative messagging by enggaging with voters personally through twitter messages. This process requires more and more accounts to be followed in order to fetch the voters in. Where as Trump and Clinton doesn't enggage personally much with users through twitter, thats might be the reason of not having many common friends.
+
+Thus, quntifying similarties based on smililarty of two user's is not the correct approach, we can fix this by taking out smililarties based on Type of voters being targeted by each candidates, or we can quntify similarity based on numbers of user's follows each candidates, or through type of actions taken by each candidates to attract voters.
+
+
+
+
+
+
+
+
+
+
+2. Looking at the output of your followed_by_hillary_and_donald function, why
+do you think this user is followed by both Hilary Clinton and Donald Trump,
+who are rivals? Do some web searches to see if you can find out more
+information.
+
+MagicJohnson is being followed by both Hillary Clinton and Donald Trump, because MagicJohnson is former NBA star, and his endrosement can create a Big impact 
+on current politics, As its reported in http://www.tmz.com/2016/02/10/magic-johnson-donald-trump-hillary-clinton/ that Magic's endorsement is a HUGE deal in the political world. 
+MagicJohnson is also involves in spreading awareness about HIV and have hosted many campaigns. He was contracted by HIv and his public announcement was huge, as that time very few celeberities comes and talk openly about HIV. MagicJohnson and his announcement brought him many followers and his endrosement in Politics of 2016 will have an impact on other voters.
+He is a strong Hillary Clinton Follower and endroser and he thinks that Hilary Clinton could be a great President of US, though he also admits that he likes Trump hotels but still belives in Hillary Clinton as a face of US President 2016. So, endorsement of Magic can create a huge impact on US politics as he is been followed by many voters of US.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. There is a big difference in how many accounts each candidate follows (Gary
+Johnson follows over 3K accounts, while Donald Trump follows less than
+50). Why do you think this is? How might that affect our analysis?
+
+Donald Trump he is really picky about who he follows, he has highest ratio of followers to those he is following, in both the Republican and Democratic fields.
+Experts in digital strategy said that Trump primarily uses Twitter to broadcast his message as opposed to engaging in a back and forth with users. Trump playing it safe when it comes to pledging his Twitter allegiance with a “follow.”.While observing his twitter account we can see that trump has followed those who are in his business of hotels or are personal family member. Also, includes some musicians and NBA star or WWE star. We can see that he is using the account more for its personal use when it comes to whom he follows, but also he has highest followers with whom he enggage through tweets.Accounts followed by Trump are all verified users compared to those candidates who might follow fake accounts which will highly affect our analysis. 
+
+
+
+
+
+
+
+4. The follower graph we've collected is incomplete. To expand it, we would
+have to also collect the list of accounts followed by each of the
+friends. That is, for each user X that Donald Trump follows, we would have to
+also collect all the users that X follows. Assuming we again use the API call
+https://dev.twitter.com/rest/reference/get/friends/ids, how many requests will
+we have to make? Given how Twitter does rate limiting
+(https://dev.twitter.com/rest/public/rate-limiting), approximately how many
+minutes will it take to collect this data?
+
+
+Number of Request to make = 
+
+
+Considering on each request to API call to https://dev.twitter.com/rest/reference/get/friends/ids, will return 5000 id's
+
+so, suppose each candidate follows N  accounts with each account identified as N[i], and there are M[N[i]][j] accounts being followed by each of the N[i] friend accounts, where it gives list of friends who is followed by a Friend who is inturn followed by a candidate.
+
+so we have in total N[i] * M[N[i]][j] friends ID to be retrived, assuming 5000 id's in response of API
+The number of calls made to an API  would be  
+
+
+Number of Request to make to an API (No. of Calls to an API)= ((N[i] * M[N[i]][j])/ 5000)* Number of Candidates
+
+
+To calculate total minutes will it take to collect this data can be determined by,
+
+Assuming 15 request per account in request window of twitter and after that 15min of rate limit period,
+
+Total Time in Minutes :- (((No. of Calls to an API)/15)-1)* 15min + (Time taken to No. of Calls to an API)
+
+
+
+
+
+
+
+
+
+
+
